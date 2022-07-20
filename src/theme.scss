@@ -1,0 +1,12 @@
+@import "../node_modules/@angular/material/theming";
+@include mat-core();
+
+$my-primary: mat-palette($mat-green, A700);
+$my-accent: mat-palette($mat-lime, A400);
+
+$my-theme: mat-light-theme($my-primary,$my-accent);
+
+@include angular-material-theme($my-theme);
+
+@import "primeng/resources/themes/lara-light-indigo/theme.css";
+@import "primeicons/primeicons.css";

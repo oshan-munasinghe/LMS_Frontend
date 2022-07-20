@@ -1,0 +1,69 @@
+<form  [formGroup]="newForm" (ngSubmit)="newteacher()">
+    <div class="mat-crd">
+      <mat-card>
+       
+       
+      <mat-card-title>New Teacher</mat-card-title>
+      </mat-card>
+    </div>
+    
+    <br>
+    <div class="container">
+        <mat-grid-list cols="2" rowHeight="300px">
+            <mat-grid-tile>
+              <div class="controles-container">
+                <input type="hidden">
+               
+         <!--Registration number-->
+                <mat-form-field>
+                  <mat-label>Registration Number</mat-label>
+                  <input type="text" matInput placeholder="Teacher's ID" [value]="tNo" formControlName="t_no" >
+                 
+                  <br>
+                </mat-form-field>
+         <!--Full Name-->
+                <mat-form-field>
+                  <input matInput placeholder="Full Name"  [value]="tName" formControlName="t_name">
+                  
+                </mat-form-field>
+         <!--Age-->
+                <mat-form-field>
+                  <input matInput placeholder="Subject"  [value]="tSubject" formControlName="subject">
+                </mat-form-field>
+        <!--Grade -->        
+                <mat-form-field>
+                  <input matInput placeholder="Phone number"  [value]="tPhone" formControlName="t_phone">
+                </mat-form-field>
+         
+              </div>
+            </mat-grid-tile>
+            
+            <mat-grid-tile>
+              <div class="controles-container">
+         
+     
+                <mat-form-field>
+                    <input matInput type="email" placeholder="Email"  [value]="tEmail" formControlName="t_email">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput type="password" placeholder="Password"  [value]="tNo" formControlName="t_pass">
+                </mat-form-field>
+             <!--  t_name  t_no  subject  t_email  t_phone  t_pass -->
+           
+            
+                <!-- <button (click)="close()"  mat-button color="warn">Warn</button>-->
+                <div class="button-row">
+
+                    <button  pButton pRipple icon="pi pi-check"  type="submit" label="Add"  class="p-button-raised p-button-info p-button-text"></button>
+                    <button type="button" pButton pRipple  icon="pi pi-times" label="Cancel" icon="pi pi-times" (click)="close()"  class="p-button-raised p-button-danger p-button-text" ></button>
+                    <button (click)="clear()" pButton pRipple icon="pi pi-refresh"  type="button" label="Clear" class="p-button-raised p-button-warning p-button-text"></button>
+                  
+                </div> 
+              </div>
+            </mat-grid-tile>
+           
+          </mat-grid-list>
+       
+        
+    </div>
+    </form>

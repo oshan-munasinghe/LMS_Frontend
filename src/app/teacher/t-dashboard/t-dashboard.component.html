@@ -1,0 +1,107 @@
+<app-t-nav></app-t-nav>
+<div class="mat-dr">
+    <div class="nav-l">
+        <mat-card-title (click)="refresh()">| Dashboard</mat-card-title>&nbsp;
+       
+        <br>
+    </div>
+    <div class="nav-r">
+        <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
+            <h3>Right Sidebar</h3>
+        </p-sidebar>
+        <p-sidebar [(visible)]="visibleSidebar3" position="top" [baseZIndex]="10000">
+            <h3></h3>
+        </p-sidebar>
+        
+        <i class="pi pi-bell mr-4 p-text-secondary"  pBadge style="font-size: 20px" value="0"></i>
+       
+        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+        &nbsp;
+        <button pButton pRipple type="button" (click)="setting()"class="p-button-text  p-button-info" >
+            <i class="fa-solid fa-gear" style="font-size: 20px"></i></button> 
+        &nbsp;
+        <button pButton pRipple type="button" (click)="display()" class="p-button-rounded p-button-text" >
+            <i class="pi pi pi-align-right " style="font-size: 20px"></i></button> 
+    </div>
+</div>
+<br><br>
+<!-- ################# -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        
+      </div>
+    </div>  
+
+    <div class="row">
+   <!-- ========1========== -->
+  
+   <div class="col">
+            <br>
+    
+            <p-card header="My Clases" [style]="{width: '100%',height:'500px','color':'#2C3E50'}" styleClass="p-card-shadow">
+         
+                <ng-template pTemplate="header" >
+                  
+                </ng-template> 
+
+                <div class="text">
+                    <p-table [value]="Classes" styleClass="p-datatable-striped"  #dt1  
+                    [paginator]="true" [rows]="4" [totalRecords]=0>
+                        <ng-template pTemplate="body" let-classes >
+                            <tr>
+                                <td>
+                                    <p-avatar icon="pi pi-book" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                                </td>
+                                <td style="font-size: larger;font-weight: bold; color:#1e4770">
+                                    {{classes.className}}
+                                </td>
+                               
+                            </tr>
+                        </ng-template>
+                        </p-table>
+    
+               </div>
+        
+                <ng-template pTemplate="footer">
+               
+                   
+                </ng-template><!-- footer end -->
+            </p-card> <!-- card end -->
+        </div> <!-- end responsive div -->
+        <!-- ======2========= -->
+        <div class="col" >
+            <br>
+            <p-card header="Ongoing Clases" [style]="{width: '100%',height:'500px','color':'#2C3E50'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                   
+                </ng-template>
+                   <div class="text">
+                    <p-table [value]="Classes" styleClass="p-datatable-striped"  #dt1  
+                    >
+                     <ng-template pTemplate="body" let-classes >
+                         <tr *ngIf="classes.status=='online'">
+                            <td>
+                                <p-avatar icon="pi pi-video" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                            </td>
+
+                             <td style="font-size: larger;font-weight: bold; color:#1e4770">
+                                {{classes.className}}
+                                <span class="badge bg-info">online</span>
+                             </td>
+                            
+                         </tr>
+                     </ng-template>
+                     </p-table>
+                   </div>
+                <ng-template pTemplate="footer">
+                    
+                </ng-template>
+            </p-card>
+            
+        </div>
+</div></div>
+
+<footer>
+    <app-footer></app-footer>    
+</footer>

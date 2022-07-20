@@ -1,0 +1,68 @@
+<app-nav-ad></app-nav-ad>
+
+<mat-card class="mat-dr">   
+    <mat-card-title>Report</mat-card-title><br>
+</mat-card>
+<div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        
+      </div>
+    </div>  <!--// row header-->
+
+    <div class="row">
+   <!-- ========1========== -->
+  <!-- start responsive div -->
+   <div class="col">
+            <br>
+     <!-- our vision card start -->
+            <p-card header="Student & teachers Report" [style]="{width: '300px',height:'250px','color':'#239B56'}" styleClass="p-card-shadow">
+         <!-- header start -->
+                <ng-template pTemplate="header" >
+                   <br>&nbsp; <button pButton pRipple type="button" icon="pi pi-user"  class="p-button-raised"></button>
+                </ng-template> <!-- header end -->
+                <div class="text">
+                    
+               </div>
+         <!-- footer start -->
+                <ng-template pTemplate="footer">
+               
+                    <button pButton pRipple type="button" label="View" (click)="stdR()" class="p-button-outlined" icon="pi pi-angle-double-right" iconPos="right"></button>
+                </ng-template><!-- footer end -->
+            </p-card> <!-- our vision card end -->
+        </div> <!-- end responsive div -->
+        <!-- ======2========= -->
+        <div class="col" >
+            <br>
+            <p-card header="Exam Reports" [style]="{width: '300px',height:'250px','color':'#3498DB'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    <br>&nbsp; <button pButton pRipple type="button" icon="fas a-solid fa-file-lines" class="p-button-raised p-button-info"></button>
+                </ng-template>
+                   <div class="text">
+                       
+                   </div>
+                <ng-template pTemplate="footer">
+                    <br>
+                    <button pButton pRipple type="button" label="View" (click)="examR()" class="p-button-outlined p-button-info" icon="pi pi-angle-double-right" iconPos="right"></button>
+                </ng-template>
+            </p-card>
+            
+        </div>
+        <div class="col" >
+            <br>
+            <p-card header="Payment Reports" [style]="{width: '300px',height:'250px','color':'#E74C3C'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    <br>&nbsp; <button pButton pRipple type="button" icon="pi pi-money-bill" class="p-button-raised p-button-danger"></button>
+                </ng-template>
+                   <div class="text">
+                       
+                   </div>
+                <ng-template pTemplate="footer">
+                    <br>
+                    <button pButton pRipple type="button" label="View" (click)="paymentR()"  class="p-button-outlined p-button-danger" icon="pi pi-angle-double-right" iconPos="right"></button>
+                </ng-template>
+            </p-card>
+            
+        </div>
+        </div>
+    </div>

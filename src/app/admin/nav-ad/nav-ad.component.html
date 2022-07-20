@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/a/dashboard">Institute</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/a/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/a/student-mgmt">Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"routerLink="/a/teacher-mgmt">Teacher</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="/a/class-mgmt">Class</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/a/report-mgmt">Report</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/a/payment">Payment</a>
+          </li>
+      
+         
+          
+        </ul> 
+        <ul class="nav navbar-right">
+           
+           <li>
+            
+            <p-slideMenu #menu [model]="items" [popup]="true" badge="8"></p-slideMenu>
+           
+            <button #btn type="button" badge="8" pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded p-button-danger" (click)="menu.toggle($event)" ></button>
+
+          <!-- <button pButton (click)="logout()" pRipple type="button" label="Logout" class="p-button-raised p-button-info"></button> -->
+        </li>
+        <li><span class="badge bg-success">online</span></li>
+        </ul>
+   
+      </div>
+    </div>
+  </nav>
+ 
+

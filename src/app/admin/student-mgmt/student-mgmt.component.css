@@ -1,0 +1,37 @@
+:host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.layout-news-active :host ::ng-deep .p-datatable tr > th {
+    top: 0;
+}
+
+@media screen and (max-width: 64em) {
+    :host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+        top: 0;
+    }
+
+    .layout-news-active :host ::ng-deep .p-datatable tr > th {
+        top: 0;
+    }
+}
+.mat-crd{
+    margin: auto;
+    padding: 2em;
+}
+.flex button{
+    margin:5px;
+}
+.frbtn button{
+    margin:5px;
+}
+.ui-state-highlight > td 
+{ background: #8ec2e9; }
+.mat-dr{
+    padding: 2em;
+    margin: auto;
+   text-align: left;
+   color: rgb(97, 114, 114);
+}

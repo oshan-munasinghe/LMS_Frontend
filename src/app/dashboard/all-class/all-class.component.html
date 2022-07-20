@@ -1,0 +1,28 @@
+<p-dataView [value]="Classes">
+    <ng-template let-car pTemplate="listItem" let-classes >
+        <p-panel  >
+            
+            <div style="float: left; padding-right: 20px;">
+        <p-avatar icon="pi pi-book" styleClass="mr-2" size="xlarge" shape="circle" ></p-avatar>
+    </div>
+                    
+    <a routerLink="/class/{{classes._id}}">
+        <button  pButton icon="pi pi-external-link" 
+        pRipple type="button" label="View Class" class="p-button-outlined" style="float: right;"></button>
+    </a>
+           
+           
+            
+
+            <p class="tiv" style="color: green; font-weight: bold;font-size: larger;">&nbsp;{{classes.className}}
+                <p-tag styleClass="mr-2" severity="success" value="Class Code {{classes.classCode}}" [rounded]="true"></p-tag>
+                <span *ngIf="classes.status=='online'" class="badge bg-info">{{classes.status}}</span>
+            </p>
+             <p class="tiv" style="color: rgb(60, 65, 60);font-weight: bold; ">&nbsp;Conduct by - {{classes.t_name}}
+               
+            </p>
+           
+          
+       
+        </p-panel>
+    </ng-template>

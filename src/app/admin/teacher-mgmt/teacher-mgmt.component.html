@@ -1,0 +1,71 @@
+<app-nav-ad></app-nav-ad>
+
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" acceptButtonStyleClass="p-button p-button-info" rejectButtonStyleClass="p-button-outlined p-button-info"></p-confirmDialog>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+<mat-card class="mat-dr">
+       
+    <mat-card-title>Teachers Management</mat-card-title><br>
+ 
+</mat-card>
+
+<div class="mat-crd">
+    <p-table [value]="Teacher" styleClass="p-datatable-striped" >
+        <ng-template pTemplate="caption">
+            <div class="flex">
+                
+                <button pButton pRipple icon="pi pi-plus" (click)="new()"  type="button" label="New" class="p-button-info"></button>
+                <span   class="p-input-icon-left" style="float: right;">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Search"  />
+                </span>
+            </div>
+            
+           
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Register Number</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-teacher>
+            <tr>
+                <td style="display: none;"><{{teacher._id}}/td>
+                <td >
+                  {{teacher.t_no}}
+                  <span class="badge bg-warning"></span>
+    
+                </td>
+                <td>
+                    {{teacher.t_name}}
+                </td>
+                <td>
+                    {{teacher.subject}}
+                </td>
+                <td>
+                    {{teacher.t_email}}
+                </td>
+                <td>
+                    {{teacher.t_phone}}
+                </td>
+                <td class="frbtn">
+                    <!-- <button pButton pRipple type="button" (click)="edit(student._id)" icon="pi pi-pencil" class="p-button-rounded p-button-secondary p-button-outlined"></button> -->
+                    <a routerLink="/a/t/update/{{teacher._id}}">
+                        <button pButton pRipple type="button"  icon="pi pi-pencil" class="p-button-rounded p-button-secondary p-button-outlined"></button>
+                    </a>
+                   
+                    <button pButton (click)="delete(teacher._id)" pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger p-button-outlined"></button>
+                    
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    
+</div>

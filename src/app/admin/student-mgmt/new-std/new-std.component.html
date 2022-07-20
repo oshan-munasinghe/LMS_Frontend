@@ -1,0 +1,85 @@
+<form  [formGroup]="newForm" (ngSubmit)="newSt()">
+    <div class="mat-crd">
+      <mat-card>
+       
+       
+      <mat-card-title>New Student</mat-card-title>
+      </mat-card>
+    </div>
+    
+    <br>
+    <div class="container">
+        <mat-grid-list cols="2" rowHeight="300px">
+            <mat-grid-tile>
+              <div class="controles-container">
+                <input type="hidden">
+               
+         <!--Registration number-->
+                <mat-form-field>
+                  <mat-label>Registration Number</mat-label>
+                  <input type="text" matInput placeholder="regNo" [value]="REG_NO" formControlName="regNo" >
+                 
+                  <br>
+                </mat-form-field>
+         <!--Full Name-->
+                <mat-form-field>
+                  <input matInput placeholder="Full Name" [value]="sName" formControlName="name">
+                  
+                </mat-form-field>
+         <!--Age-->
+                <mat-form-field>
+                  <input matInput placeholder="Age"[value]="sAge"  formControlName="age">
+                </mat-form-field>
+        <!--Grade -->        
+                <mat-form-field>
+                  <input matInput placeholder="Grade" [value]="sGrade" formControlName="grade">
+                </mat-form-field>
+        <!--School-->       
+                <mat-form-field>
+                  <input matInput placeholder="School" [value]="sSchool" formControlName="school">
+                </mat-form-field>       
+              </div>
+            </mat-grid-tile>
+            
+            <mat-grid-tile>
+              <div class="controles-container">
+          <!--Gender-->
+                 <div class="add-botom-padding">
+                  <mat-hint>Gender</mat-hint>
+                  <br>
+                  <mat-radio-group aria-label="Select an option"  formControlName="gender">
+                    <mat-radio-button value="Male"  >Male</mat-radio-button>
+                    <mat-radio-button value="Female">Female</mat-radio-button>
+                  </mat-radio-group>
+              </div>
+     
+          <!--Phone no --> 
+          
+                <mat-form-field>
+                  <input matInput placeholder="Phone Number"  formControlName="phoneno">
+                </mat-form-field>
+             
+           <!--email --> 
+                <mat-form-field>
+                  <input matInput placeholder="Email"  formControlName="uemail">
+                </mat-form-field>
+             <!--password --> 
+                 <mat-form-field>
+                    <input matInput type="password" placeholder="password"  formControlName="password">
+                  </mat-form-field>
+                <!-- <button (click)="close()"  mat-button color="warn">Warn</button>-->
+                <div class="button-row">
+
+                    <button  pButton pRipple icon="pi pi-check"  type="submit" label="Add"  class="p-button-raised p-button-info p-button-text"></button>
+                    <button type="button" pButton pRipple  icon="pi pi-times" label="Cancel" icon="pi pi-times" (click)="close()"  class="p-button-raised p-button-danger p-button-text" ></button>
+                    <button (click)="clear()" pButton pRipple icon="pi pi-refresh"  type="button" label="Clear" class="p-button-raised p-button-warning p-button-text"></button>
+                  
+                </div> 
+              </div>
+            </mat-grid-tile>
+           
+          </mat-grid-list>
+       
+        
+    </div>
+    </form>

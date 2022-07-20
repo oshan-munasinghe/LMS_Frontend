@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" acceptButtonStyleClass="p-button p-button-info" rejectButtonStyleClass="p-button-outlined p-button-info"></p-confirmDialog>
+
+<mat-card class="mat-dr">   
+    <mat-card-title>Payment</mat-card-title><br>
+   
+    </mat-card>
+    
+    <div class="main-c" [formGroup]="addExclases"> 
+        <mat-card class="mat-dr1">  
+            <p-tag *ngIf="bdisabled==true" styleClass="mr-2" severity="success" value="Already Paid" [rounded]="true"></p-tag>
+        <br><mat-card-title>Class Name = {{ClzName}}</mat-card-title>
+        <br>
+        <mat-card-subtitle>Student Name = {{Sname}}</mat-card-subtitle>
+        <mat-card-subtitle>Class Code = {{ClzCode}}</mat-card-subtitle>
+        
+        <p-dropdown [options]="months"  [editable]="true" placeholder="Select a Month" optionLabel="Month" [showClear]="true"></p-dropdown> <br><br>
+        <mat-card-subtitle>*Please Upload Pay slip after click bellow button/Click check button before payment</mat-card-subtitle>    <br>
+    <!-- ############### -->
+    <h3>Upload PaySlip or Screenshot</h3></mat-card>
+    <p-fileUpload name="demo[]" url="/" (onUpload)="onUpload($event)" class="p-button-info"
+            accept="image/*" >
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template>
+    </p-fileUpload> 
+    <br>
+    
+    <button *ngIf="bdisabled!=true" pButton pRipple type="button" (click)="pay()" label="Pay" style="float:right; margin-left: 10px;" icon="pi pi-money-bill" ></button>
+    <button *ngIf="bdisabled!=false" pButton pRipple type="button"  label="Pay" style="float:right; margin-left: 10px;" icon="pi pi-money-bill" disabled="true"></button>&nbsp;
+    <button  pButton pRipple type="button" (click)="back()" label="Cancel" style="float:right;margin-left: 10px;" class="p-button-secondary" icon="pi pi-times"></button>
+    <button pButton pRipple type="button" (click)="check()" label="check" style="float:right;" class="p-button-info" icon="pi pi-refresh"></button>
+</div>
+
+    
+ 
+

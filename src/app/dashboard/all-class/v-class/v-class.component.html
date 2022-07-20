@@ -1,0 +1,144 @@
+<app-navbar></app-navbar>
+
+<p-toast></p-toast>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+
+
+<div>
+
+    <mat-card class="mat-dr">
+
+        <mat-card-title>#{{clzCode}} : {{clzName}}</mat-card-title><br>
+        <mat-card-subtitle>Teacher Name : {{tname}}</mat-card-subtitle>
+        <mat-card-subtitle>Welcome | ආයුබෝවන් 🙏 </mat-card-subtitle>
+    </mat-card>
+</div>
+    <br>
+    <div class="new-de" style="text-align: center;">
+        <mat-card class="mat-card-01">
+            <mat-card-title>Teacher Details</mat-card-title>
+            <h2>{{tname}} </h2>
+            <mat-card-subtitle>Subject - {{Subject}} </mat-card-subtitle>
+            <mat-card-subtitle>🎓 Qualification - {{Qualification}}</mat-card-subtitle>
+            <mat-card-subtitle>🛠️ Experiance - {{experiance}} </mat-card-subtitle>
+        </mat-card>
+    </div>
+    <div class="zx-02">
+        <p-button (click)="test()" label="Refresh " icon="pi pi-refresh" styleClass="p-button-danger" [style]="{'margin-left': '.5em'}"></p-button>
+    </div>
+
+    <div class="new-de-01">
+        <p-card header="Class Details" subheader="{{clzName}}" [style]="{width: '360px' }" styleClass="p-card-shadow">
+            <ng-template pTemplate="header">
+
+            </ng-template>
+            <p class="t1">Subject - {{Subject}}</p>
+            <p-divider></p-divider>
+            <p class="t1">Grade - {{Grade}}</p>
+            <p-divider></p-divider>
+            <p class="t1">Day - {{Day}}</p>
+            <p-divider></p-divider>
+            <p class="t1">Start Time - {{STime}}</p>
+            <p-divider></p-divider>
+            <p class="t1">End Time - {{ETime}}</p>
+            <p-divider></p-divider>
+            <p class="t1">Class Fee Rs.{{Fee}}/=</p>
+            <p-divider></p-divider>
+            <p class="t1">Discription - {{DIS}}</p>
+            <p-divider></p-divider>
+            <p></p>
+            <ng-template pTemplate="footer">
+
+                <p-toggleButton *ngIf="join!=true" (click)="addtojoin()" onLabel="Joined" offLabel="Join" onIcon="pi-pi-check" [style]="{'width': '10em'}"></p-toggleButton>
+                <p-button (click)="back()" label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+            </ng-template>
+        </p-card>
+    </div>
+
+
+    <div class="zx-01">
+        <div  *ngIf="join else elseBlock">
+
+
+            <div class="block-main">
+                <div class="block-left">
+                    <p-card header="Welcome To {{clzName}} class" [style]="{width: '100%',color:'#1F618D ' }" styleClass="p-card-shadow">
+                        <ng-template pTemplate="header">
+
+                        </ng-template>
+                        <p-divider></p-divider>
+                        <p class="t2">This class is conducted entirely online. The class starts at the specified time. Then you can enter the class with the join now button below and follow some of the following things.
+                        </p>
+                        <p-divider></p-divider>
+                        <p class="t4">&nbsp; *You can join the class by computer or mobile phone. Be sure not to turn on the video or mic without the teacher's attention.</p>
+                        <p class="t4">&nbsp; *Avoid doing things that during the class</p>
+                        <p class="t4">&nbsp; *If you have any problems entering the class, call the number below</p>
+                        <p class="t5">Hotline 077-3723451</p>
+                        <p-divider></p-divider>
+                        <p class="t6">මෙම පංතිය සම්පූරනයෙන්ම Online මාර්ගයෙන් පවත්වේ, දේශන වලට සම්බන්ධ වීමට පහල Join Now Button මත click කරන්න පංතිය පැවැත්වෙන වේලාව තුල එය සක්‍රිය වනු ඇත.ගුරුවරයා විසින් සපයා ඇති අමතර සටහන් වැනි දෑ පහතින් බාගත කරග්නන. පන්තිය පැවැත්වෙන
+                            වේලාවේ කිසිම විටෙක ගුරුවරයාගේ අනුදැනුමකින් තොරව camera 🎥 හා mic 🎙️ සක්‍රිය නොකිරීමට වගබලාගන්න, ගැටලුවක් ඇත්නම් සදහන් කර ඇති අංකයට අමතන්න </p>
+                        <p-divider></p-divider>
+                        <p style="text-align: left;"> Start Time {{Day}} {{STime}}</p>
+                       
+                            <button *ngIf="clzLink!=''" (click)="zoom()" pButton pRipple type="button" label="Join Now" icon="fa-solid fa-video" class="p-button-outlined p-button-rounded p-button-info"></button>
+                            
+                    </p-card>
+                    <br>
+                </div>
+
+            </div>
+            
+            <div class="notes">.<div class="ns"></div>
+            <br>
+                
+            <p-card header="Learning Material For Classwork" subheader="{{clzName}}" [style]="{width: '100%'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+    
+                </ng-template>
+                <p-divider></p-divider>
+                <!-- week1 -->
+                <p *ngIf="w1dis!=''" class="n1">1 - {{w1dis}}</p>
+                <button *ngIf="urlw1!=''" (click)="week1()" pButton pRipple type="button" icon="pi pi-angle-double-down" label="Download" class="p-button-raised p-button-success"></button>
+                <p-divider></p-divider>
+
+                 <!-- week2 -->
+                 <p *ngIf="w2dis!=''" class="n1">2 - {{w2dis}}</p>                
+                 <button *ngIf="urlw2!=''" (click)="week2()" pButton pRipple type="button" icon="pi pi-angle-double-down" label="Download" class="p-button-raised p-button-success"></button>
+                 <p-divider></p-divider>
+
+                  <!-- week3 -->
+                <p *ngIf="w3dis!=''" class="n1">3 - {{w3dis}}</p>                
+                <button *ngIf="urlw3!=''" (click)="week3()" pButton pRipple type="button" icon="pi pi-angle-double-down" label="Download" class="p-button-raised p-button-success"></button>
+                <p-divider></p-divider>
+
+                 <!-- week4 -->
+                 <p *ngIf="w4dis!=''" class="n1">4 - {{w4dis}}</p>                
+                 <button *ngIf="urlw4!=''" (click)="week4()" pButton pRipple type="button" icon="pi pi-angle-double-down" label="Download" class="p-button-raised p-button-success"></button>
+                 <p-divider></p-divider>
+
+                  <!-- week5 -->
+                <p *ngIf="w5dis!=''" class="n1">5 - {{w5dis}}</p>                
+                <button *ngIf="urlw5!=''" (click)="week1()" pButton pRipple type="button" icon="pi pi-angle-double-down" label="Download" class="p-button-raised p-button-success"></button>
+                <p-divider></p-divider>
+
+                 <!-- week all -->
+                 <p *ngIf="walldis!=''" class="n1">All Notes  - {{walldis}}</p>
+                 <button *ngIf="urlall!=''" (click)="allweek()" pButton pRipple type="button" icon="pi pi-angle-double-down" label="Download" class="p-button-raised p-button-success"></button>
+                 <p-divider></p-divider>
+                </p-card>
+        </div>
+        </div>
+       
+        <div>
+            <ng-template #elseBlock>
+                <app-clas-init></app-clas-init>
+            </ng-template>
+
+        </div>
+      
+         
+    </div>
+    
+ 

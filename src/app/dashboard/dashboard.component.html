@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="mat-crd">
+<mat-card >
+    <div style="float: right; ">
+        <button (click)="setting()" class="btn" ><i class="pi pi-user-edit" style="font-size: 2em;" ></i></button>
+    </div>
+    <mat-card-title>{{sName}}</mat-card-title>
+    <span class="badge bg-warning">{{verify}}</span>
+    <mat-card-subtitle>{{REG_NO}}</mat-card-subtitle>
+    
+    <img src="/../../assets/img/user.png" mat-card-avatar>
+    <span class="badge bg-success">Online</span>
+    
+    <mat-card-actions>
+      
+    </mat-card-actions>
+  </mat-card>
+  </div>
+  <div class="card">
+    
+    <p-tabView styleClass="tabview-custom">
+        <p-tabPanel>
+            <ng-template pTemplate = "header">
+                <i class=""></i>
+                <span>About Us</span>
+            </ng-template>
+            <br>
+           <app-h-about></app-h-about>
+                   
+        </p-tabPanel>
+        <p-tabPanel header="Header II">
+            <ng-template pTemplate = "header">
+                <i class=""></i>
+                <span>All Available Classes</span>
+            </ng-template>
+                <app-all-class></app-all-class>
+        </p-tabPanel>
+        <p-tabPanel header="Header III">
+            <ng-template pTemplate = "header">
+                <i class=""></i>
+                <span>Seminar</span>
+                    
+            </ng-template>
+            <app-seminar></app-seminar>
+        </p-tabPanel>
+    </p-tabView>
+    </div>
+
+    <div>
+        
+    </div>
+<footer>
+ <app-footer></app-footer>
+</footer>
+    
+
+
+
+
+
+
+
+
+
+ 

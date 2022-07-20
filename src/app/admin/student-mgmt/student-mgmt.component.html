@@ -1,0 +1,76 @@
+<app-nav-ad></app-nav-ad>
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" acceptButtonStyleClass="p-button p-button-info" rejectButtonStyleClass="p-button-outlined p-button-info"></p-confirmDialog>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+
+    <mat-card class="mat-dr">
+       
+        <mat-card-title>Student Management</mat-card-title><br>
+     
+    </mat-card>
+
+
+<div class="mat-crd">
+    <p-table [value]="Student" styleClass="p-datatable-striped"  #dt1 dataKey="id" selectionMode="single" >
+    
+    
+        <ng-template pTemplate="caption">
+            <div class="flex">
+                
+                <button pButton pRipple icon="pi pi-plus" (click)="new()"  type="button" label="New" class="p-button-info"></button>
+                <span class="p-input-icon-left" style="float: right;">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Search"  />
+                </span>
+                <!-- <input pInputText type="text" (input)="dt1.filter($event.target.value, 'name', 'contains')" 
+                [value]="dt1.filters['name']?.value" placeholder="Search by Name" > -->
+            </div>
+            
+           
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Register Number</th>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>School</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-student>
+            <tr>
+                <td style="display: none;"><{{student._id}}/td>
+                <td >
+                  {{student.regNo}}
+                  <span class="badge bg-warning"></span>
+    
+                </td>
+                <td>
+                    {{student.name}}
+                </td>
+                <td>
+                    {{student.grade}}
+                </td>
+                <td>
+                    {{student.school}}
+                </td>
+                <td>
+                    {{student.uemail}}
+                </td>
+                <td class="frbtn">
+                    <!-- <button pButton pRipple type="button" (click)="edit(student._id)" icon="pi pi-pencil" class="p-button-rounded p-button-secondary p-button-outlined"></button> -->
+                    <a routerLink="/a/editsd/{{student._id}}">
+                        <button pButton pRipple type="button"  icon="pi pi-pencil" class="p-button-rounded p-button-secondary p-button-outlined"></button>
+                    </a>
+                   
+                    <button pButton (click)="delete(student._id)" pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger p-button-outlined"></button>
+                    
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    
+</div>

@@ -1,0 +1,90 @@
+<app-nav-ad></app-nav-ad>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+<mat-card class="mat-dr">   
+    <mat-card-title>Create New Classes</mat-card-title><br>
+</mat-card>
+<form [formGroup]="classForm" (ngSubmit)="newClass()">
+<div class="mat-crd">
+ <!-- ==================row 1============ -->
+        <div class="mat-crd" >
+            <div class="cst-01" >
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i >#</i></span>
+                    <input type="text" pInputText placeholder="Class Code" formControlName="classCode" >       
+                </div>
+         <!-- -----------------  -->
+                <br>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="fa-solid fa-user"></i></span> 
+                    <p-dropdown [options]="teacherLi" class="drop-down" [style]="{'width':'100%'}"  placeholder="Select Teacher"  [showClear]="true"   formControlName="t_name"></p-dropdown>
+                </div>
+        <!-- -----------------  -->        
+                <br>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="pi pi-clock"></i></span> 
+                    <input matInput formControlName="startTime" [ngxMatTimepicker]="spicker" placeholder="Class Start Time"   style="width:100%;"  >
+                    <ngx-mat-timepicker #spicker></ngx-mat-timepicker>
+                    
+                </div>   
+       <!-- -----------------  -->       
+            <br>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-clock"></i></span> 
+                <input matInput formControlName="endTime" [ngxMatTimepicker]="picker" placeholder="Class End Time"  style="width:100%;" >
+                <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+                <!-- <p-calendar [style]="{'width':'100%'}" [timeOnly]="true"  inputId="timeonly" formControlName="endTime"></p-calendar> -->
+                
+            </div>   
+        </div>
+           
+ <!-- ========row 2========== -->
+            <div class="cst-01" >
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="fa-solid fa-chalkboard-user"></i></span>
+                    <input type="text" pInputText placeholder="Class Name" formControlName="className" >   
+     <!-- -----------------  -->
+                </div>
+                <br>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i >Grade</i></span>
+                    <p-inputNumber aria-placeholder="Grade"  mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="1" [max]="13" formControlName="grade">
+                    </p-inputNumber>
+                </div>
+      <!-- -----------------  -->
+                <br>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="fa-solid fa-file-code"></i></span> 
+                    <textarea rows="5" cols="30" pInputTextarea  [style]="{'resize': 'none'}" placeholder="Class Discription" formControlName="discription"></textarea>
+
+                </div>
+               
+            </div>
+ <!-- ========row 3====================== -->
+            <div class="cst-01" >
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="fa-solid fa-book-open"></i></span>
+                    <input type="text" pInputText placeholder="Subject" formControlName="subject">       
+                </div>
+    <!-- -----------------  -->
+                   <br>
+                   <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="fa-solid fa-rupee-sign"></i></span>
+                    <input type="text" pInputText placeholder="Monthly Fee"  formControlName="fee">       
+                </div>
+      <!-- -----------------  -->
+                <br>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="fa-solid fa-calendar-day"></i></span> 
+                    <p-dropdown [options]="days" [style]="{'width':'100%'}"  placeholder="Select Day" [showClear]="true" formControlName="day"></p-dropdown>
+                </div>
+       <!-- -----------------  -->         
+                         
+               
+            </div>
+            </div>
+            &nbsp;&nbsp;<button  pButton pRipple icon="pi pi-save"  type="submit" label="Add"  class="p-button-raised p-button-info p-button-text"></button>
+            <button  pButton pRipple icon="pi pi-times"  type="button" label="Cancel"  class="p-button-raised p-button-secondary p-button-text"></button>
+        </div>
+    </form>    

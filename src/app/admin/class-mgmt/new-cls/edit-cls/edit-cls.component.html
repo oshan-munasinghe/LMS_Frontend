@@ -1,0 +1,99 @@
+<app-nav-ad></app-nav-ad>
+<mat-card class="mat-dr">
+       
+    <mat-card-title>Edit Class</mat-card-title><br>
+    <mat-card-subtitle></mat-card-subtitle>
+    <mat-card-subtitle>Welcome | ආයුබෝවන් 🙏 </mat-card-subtitle>
+</mat-card>
+<br>
+ 
+<form [formGroup]="classForm" (ngSubmit)="editClass()">
+    <div class="mat-crd">
+     <!-- ==================row 1============ -->
+            <div class="mat-crd" >
+                <div class="cst-01" >
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i >#</i></span>
+                        <input type="text" pInputText placeholder="Class Code" [ngModel]="clzCode"  formControlName="classCode" >       
+                    </div>
+             <!-- -----------------  -->
+                    <br>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-user"></i></span> 
+                        <p-dropdown [options]="teacherLi" class="drop-down" [style]="{'width':'100%'}" [ngModel]="t_name"  placeholder="Select Teacher"  [showClear]="true"   formControlName="t_name"></p-dropdown>
+                    </div>
+            <!-- -----------------  -->        
+                    <br>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-clock"></i></span> 
+                        <input matInput formControlName="startTime" [ngxMatTimepicker]="spicker" placeholder="Class Start Time"  [ngModel]="Stime" style="width:100%;"  >
+                        <ngx-mat-timepicker #spicker></ngx-mat-timepicker>
+                        
+                    </div>   
+           <!-- -----------------  -->       
+                <br>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="pi pi-clock"></i></span> 
+                    <input matInput formControlName="endTime" [ngxMatTimepicker]="picker" placeholder="Class End Time" [ngModel]="Etime" style="width:100%;" >
+                    <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+                    <!-- <p-calendar [style]="{'width':'100%'}" [timeOnly]="true"  inputId="timeonly" formControlName="endTime"></p-calendar> -->
+                    
+                </div>   
+                <br>
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i >Class State</i></span>
+                    <p-selectButton [options]="stateOptions"  optionLabel="label" optionValue="value"></p-selectButton>
+                    
+                    
+                </div>   
+            </div>
+               
+     <!-- ========row 2========== -->
+                <div class="cst-01" >
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        <input type="text" pInputText placeholder="Class Name" [ngModel]="clzName" formControlName="className" >   
+         <!-- -----------------  -->
+                    </div>
+                    <br>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i >Grade</i></span>
+                        <p-inputNumber aria-placeholder="Grade"  mode="decimal" [ngModel]="Grade" [showButtons]="true" inputId="minmax-buttons" [min]="1" [max]="13" formControlName="grade">
+                        </p-inputNumber>
+                    </div>
+          <!-- -----------------  -->
+                    <br>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-file-code"></i></span> 
+                        <textarea rows="5" cols="30" pInputTextarea  [style]="{'resize': 'none'}" placeholder="Class Discription" [ngModel]="Dis" formControlName="discription"></textarea>
+    
+                    </div>
+                   
+                </div>
+     <!-- ========row 3====================== -->
+                <div class="cst-01" >
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-book-open"></i></span>
+                        <input type="text" pInputText placeholder="Subject" [ngModel]="Subject" formControlName="subject">       
+                    </div>
+        <!-- -----------------  -->
+                       <br>
+                       <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-rupee-sign"></i></span>
+                        <input type="text" pInputText placeholder="Monthly Fee" [ngModel]="Fees" formControlName="fee">       
+                    </div>
+          <!-- -----------------  -->
+                    <br>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-calendar-day"></i></span> 
+                        <p-dropdown [options]="days" [style]="{'width':'100%'}" [ngModel]="DAY" placeholder="Select Day" [showClear]="true" formControlName="day"></p-dropdown>
+                    </div>
+           <!-- -----------------  -->         
+                             
+                   
+                </div>
+                </div>
+                <button  pButton pRipple icon="pi pi-check"  type="submit" label="Update"  class="p-button-raised p-button-info p-button-text"></button>
+                <button type="button" pButton pRipple icon="pi pi-times"  (click)="clear()" label="clear"  class="p-button-raised p-button-danger p-button-text"></button>
+            </div>
+        </form>    

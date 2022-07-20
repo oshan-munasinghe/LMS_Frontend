@@ -1,0 +1,49 @@
+.mat-dr{
+    padding: 2em;
+    margin: auto;
+   text-align: left;
+   color: rgb(97, 114, 114);
+}
+.nav-l{
+    border: none;
+    text-align: left;
+    float: left;
+   
+}
+.nav-r{
+    border: none;
+    text-align: right;
+    float: right;
+}
+.border{
+    margin-top: 2em;
+    border-bottom: solid;
+    color: blueviolet;
+}
+.p-ripple.purple .p-ink {
+    background: rgba(256,39,176,.3);
+}
+.text{
+    
+    font-size:xx-large;
+    font-weight: bold;
+    color: rgb(61, 57, 57);
+}
+.footer{
+    background-color: #eff3f0;
+    width: 100%;
+    height: 60px;
+}
+.foot-l{
+    
+    float: left;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.foot-r{
+    float: right;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    margin-bottom: 0px;
+}

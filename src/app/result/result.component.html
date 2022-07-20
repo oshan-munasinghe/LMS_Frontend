@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<mat-card class="mat-dr">
+       
+    <mat-card-title>Result Evaluation & Exam</mat-card-title><br>
+ 
+</mat-card>
+
+<div style="margin: auto;padding: 2em;">
+<div class="row">
+    <!-- ========1========== -->
+   <!-- start responsive div -->
+    <div class="col-12 col-sm-6 col-md-4">
+             <br>
+             <p-card header="My Result" subheader="view your own exam results" [style]="{'width': '25rem', 'margin-bottom': '2em' ,'border':'1px solid gray'}">
+                <i class="pi pi-book" style="font-size: 2rem" ></i>
+            
+                <ng-template pTemplate="footer">
+                    <p-button label="View Result" ></p-button>
+                   
+                </ng-template>
+            </p-card>
+         </div> <!-- end responsive div -->
+         <!-- ======2========= -->
+         <div class="col-12 col-sm-6 col-md-4" >
+             <br>
+             <p-card header="Exam" subheader="view your own exam results" [style]="{'width': '25rem', 'margin-bottom': '2em' ,'border':'1px solid gray'}">
+                <i class="pi pi-book" style="font-size: 2rem" ></i>
+            
+                <ng-template pTemplate="footer">
+                    <button pButton pRipple type="button" label="Show Available Exam" class="p-button-info"></button>
+                   
+                </ng-template>
+            </p-card>
+             
+         </div>
+        </div></div>
+<footer>
+    <app-footer></app-footer>    
+</footer>
+

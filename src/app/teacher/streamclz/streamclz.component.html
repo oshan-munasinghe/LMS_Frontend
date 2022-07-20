@@ -1,0 +1,127 @@
+<app-t-nav></app-t-nav>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+<form  >
+<mat-card class="mat-dr">   
+    <mat-card-title>Class Stream </mat-card-title><br>
+    
+    </mat-card>
+
+
+    <div class="main-c" [formGroup]="addStream">
+
+        <!-- left compartment -->
+        <div class="left">
+           
+                <div class="new">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-user"></i></span> 
+                        <input type="text" pInputText placeholder="Teacher Name" [ngModel]="TNAME" formControlName="t_name" readonly >
+                    </div>
+                    <!-- class Name -->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-book-medical"></i></span> 
+                        <p-dropdown  [options]="clznameli"  class="drop-down" [style]="{'width':'100%'}" placeholder="Select class name"  [showClear]="true"  formControlName="clz_name" ></p-dropdown>
+                    </div>
+                
+                    <!-- class code -->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-user"></i></span> 
+                        <input type="text" pInputText placeholder="Class code" formControlName="clz_code" >   
+                    </div>
+                    
+                    <!-- clz link -->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-video"></i></span>
+                        <input type="text" pInputText placeholder="Online Class Link (zoom/Teams)" formControlName="clz_link">   
+                    </div>
+
+                    <!-- note link -->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-link"></i></span>
+                        <input type="text" pInputText placeholder="Note Link 1" formControlName="noteLink1" >   
+                    </div>
+
+                    <!-- note discription -->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-file-code"></i></span> 
+                        <textarea rows="5" cols="30" pInputTextarea  [style]="{'resize': 'none'}" placeholder="Note 1 Discription" formControlName="n1dis"  ></textarea>
+                    </div>
+                    
+                   
+                     <!-- note link 2-->
+                     <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-link"></i></span>
+                        <input type="text" pInputText placeholder="Note Link 2"  formControlName="noteLink2" >   
+                    </div>
+
+                    <!-- note discription 2-->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-file-code"></i></span> 
+                        <textarea rows="5" cols="30" pInputTextarea  [style]="{'resize': 'none'}" placeholder="Note 2 Discription"  formControlName="n2dis" ></textarea>
+                    </div>
+
+                     <!-- note link 3-->
+                     <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-link"></i></span>
+                        <input type="text" pInputText placeholder="Note Link 3"  formControlName="noteLink3" >   
+                    </div>
+
+                    <!-- note discription 3-->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-file-code"></i></span> 
+                        <textarea rows="5" cols="30" pInputTextarea  [style]="{'resize': 'none'}" placeholder="Note 3 Discription"  formControlName="n3dis" ></textarea>
+                    </div>
+
+                    <!-- note link 4-->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-link"></i></span>
+                        <input type="text" pInputText placeholder="Note Link 4"  formControlName="noteLink4">   
+                    </div>
+
+                    <!-- note discription 4-->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-file-code"></i></span> 
+                        <textarea rows="5" cols="30" pInputTextarea  [style]="{'resize': 'none'}" placeholder="Note 4 Discription"  formControlName="n4dis" ></textarea>
+                    </div>
+
+                    <!-- note link 5-->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-link"></i></span>
+                        <input type="text" pInputText placeholder="Note Link 5"  formControlName="noteLink5">   
+                    </div>
+
+                    <!-- note discription 5 -->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-file-code"></i></span> 
+                        <textarea rows="5" cols="30" pInputTextarea  [style]="{'resize': 'none'}" placeholder="Note 5 Discription"  formControlName="n5dis" ></textarea>
+                    </div>
+
+                    <!-- note link all-->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-link"></i></span>
+                        <input type="text" pInputText placeholder="Note Link all"  formControlName="noteLinkall">   
+                    </div>
+
+                    <!-- note discription -->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa-solid fa-file-code"></i></span> 
+                        <textarea rows="5" cols="30" pInputTextarea  [style]="{'resize': 'none'}" placeholder="Note all Discription"  formControlName="nalldis" ></textarea>
+                    </div>
+
+                    <button pButton (click)="newStream()" pRipple type="button" icon="pi pi-save" label="Add Stream Class" class="p-button-outlined p-button-info" style="float: center;" ></button>
+                   <br>.
+                </div>
+                
+                
+            </div>
+
+        
+        <!-- right compartment -->
+        <div class="right">
+            <app-shsclass></app-shsclass>
+        </div>
+        
+    </div>
+</form>

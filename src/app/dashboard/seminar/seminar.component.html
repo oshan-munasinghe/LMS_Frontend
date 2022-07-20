@@ -1,0 +1,28 @@
+<div class="card">
+    <p-dataView #dv >
+        <ng-template let-product pTemplate="gridItem">
+            <div class="col-12 md:col-4">
+                <div class="product-grid-item card">
+                    <div class="product-grid-item-top">
+                        <div>
+                            <i class="pi pi-tag product-category-icon"></i>
+                            <span class="product-category">prod</span>
+                        </div>
+                        <span >inv sta</span>
+                    </div>
+                    <div class="product-grid-item-content">
+                       
+                        <div class="product-name">p name</div>
+                        <div class="product-description">p dis</div>
+                       
+                    </div>
+                    <div class="product-grid-item-bottom">
+                      
+                        <p-button icon="pi pi-shopping-cart"></p-button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataView>
+
+</div>

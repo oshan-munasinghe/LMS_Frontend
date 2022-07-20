@@ -1,0 +1,29 @@
+.mat-tab-group {
+    margin-bottom: 48px;
+    
+  }
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    
+  }
+  .mat-crd{
+    margin: auto; 
+    padding: 1em;
+   
+  }
+  .mat-card{
+      
+    background-image: 
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #14681870),url('/../../assets/img/sc-img.jpg');
+    box-shadow: 10px;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  
+  
+  /* this blure all card */
+  
+}
+.avi{
+  float: left;
+}

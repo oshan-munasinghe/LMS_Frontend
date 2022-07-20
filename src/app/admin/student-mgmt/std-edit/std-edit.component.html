@@ -1,0 +1,109 @@
+<app-nav-ad></app-nav-ad>
+<p-toast></p-toast>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+<form [formGroup]="updateForm" (ngSubmit)="update()">
+<div class="new-de">
+    
+    <button (click)="next()" pButton pRipple label="Back" type="button" icon="pi pi-angle-left" class="p-button-rounded p-button-info p-button-text"></button>
+
+</div>
+<div class="new-de" style="text-align: center;">
+   
+<mat-card>
+    
+    <mat-card-title>
+        Edit Student
+    </mat-card-title>
+</mat-card>
+</div>
+<div class="gd-crd" >
+<div class="grid-left" >
+<div class="grid p-fluid">
+        <div class="col-12 md:col-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-hashtag"></i></span>
+                <input type="text" pInputText placeholder="Register Number" [ngModel]="REG_NO" formControlName="regNo" pTooltip="Reister Number">         
+            </div>
+        </div>
+        <br>
+        <div class="col-12 md:col-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input type="text" pInputText placeholder="Name" [ngModel]="sName"  formControlName="name" pTooltip="Name">  
+                     
+            </div>
+        </div>
+            <br>   
+        <div class="col-12 md:col-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="fa fa-child"></i></span>
+                <input type="text" pInputText placeholder="Age" [ngModel]="sAge"  formControlName="age" pTooltip="Age">       
+            </div>
+        </div>
+        <br>
+        <div class="col-12 md:col-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="fa fa-user-group"></i></span>
+                <input type="text" pInputText placeholder="Grade" [ngModel]="sGrade" formControlName="grade" pTooltip="Grade">       
+            </div>
+        </div>
+        <br>
+        <div class="col-12 md:col-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="fa fa-school"></i></span>
+                <input type="text" pInputText placeholder="School" [ngModel]="sSchool" formControlName="school" pTooltip="School">       
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+<div class="grid-right">
+    <div class="grid p-fluid">
+        <div class="col-12 md:col-4">
+            <mat-hint>Gender</mat-hint>
+              <br>
+              <mat-radio-group aria-label="Select an option" [ngModel]="sGender"  formControlName="gender" pTooltip="Gender">
+                <mat-radio-button value="Male"  >Male</mat-radio-button>
+                <mat-radio-button value="Female">Female</mat-radio-button>
+              </mat-radio-group>
+        </div>
+        <br>
+        <div class="col-12 md:col-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="fa fa-phone"></i></span>
+                <input type="text" pInputText placeholder="Phone Number" [ngModel]="sPhone" formControlName="phoneno" pTooltip="Phone">   
+                    
+            </div>
+        </div>
+             <br>   
+        <div class="col-12 md:col-4">
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="fa fa-envelope"></i></span>
+                <input type="text" pInputText placeholder="Email" [ngModel]="sEmail " formControlName="uemail" pTooltip="Email">      
+            </div>
+        </div>
+        <br>
+        <div class="col-12 md:col-4">
+            <div class="button-row">
+                <button type="button" (click)="passch()"  mat-stroked-button color="primary">Change Password</button>
+                <button type="button" (click)="clear()"  class="btn" mat-stroked-button color="warn" ><i class="fa-solid fa-circle-minus"></i></button>
+              </div>
+        </div>
+        <br>
+        <div class="col-12 md:col-4">
+            <div class="button-row">
+                <button type="submit" mat-raised-button color="primary">Update</button>
+            
+                <button type="button" (click)="close()" mat-raised-button >Cancel</button>
+              </div>
+        </div>
+       
+    </div>
+    
+</div>
+</div>
+
+</form>

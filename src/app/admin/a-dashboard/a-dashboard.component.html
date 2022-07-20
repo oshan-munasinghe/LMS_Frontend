@@ -1,0 +1,199 @@
+<app-nav-ad></app-nav-ad>
+<div class="mat-dr">
+    <div class="nav-l">
+        <mat-card-title (click)="refresh()">| Dashboard</mat-card-title>&nbsp;
+       
+        <br>
+    </div>
+    <div class="nav-r">
+        <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
+            <h3>Right Sidebar</h3>
+        </p-sidebar>
+        <p-sidebar [(visible)]="visibleSidebar3" position="top" [baseZIndex]="10000">
+            <h3></h3>
+        </p-sidebar>
+        
+        <i class="pi pi-bell mr-4 p-text-secondary" (click)="menu.toggle($event)" pBadge style="font-size: 20px" value="2"></i>
+       
+        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+        &nbsp;
+        <button pButton pRipple type="button" (click)="setting()"class="p-button-text  p-button-info" >
+            <i class="fa-solid fa-gear" style="font-size: 20px"></i></button> 
+        &nbsp;
+        <button pButton pRipple type="button" (click)="display($event)" class="p-button-rounded p-button-text" >
+            <i class="pi pi pi-align-right " style="font-size: 20px"></i></button> 
+    </div>
+</div>
+<div class="border">
+</div>
+<!-- ########## -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        
+      </div>
+    </div>  <!--// row header-->
+
+    <div class="row">
+   <!-- ========1========== -->
+  <!-- start responsive div -->
+   <div class="col">
+            <br>
+     <!-- our vision card start -->
+            <p-card header="Student" [style]="{width: '300px',height:'200px','color':'#239B56'}" styleClass="p-card-shadow">
+         <!-- header start -->
+                <ng-template pTemplate="header" >
+                   <br>&nbsp; <button pButton pRipple type="button" icon="pi pi-user" class="p-button-raised"></button>
+                </ng-template> <!-- header end -->
+                <div class="text">
+                    384
+               </div>
+         <!-- footer start -->
+                <ng-template pTemplate="footer">
+               
+                   
+                </ng-template><!-- footer end -->
+            </p-card> <!-- our vision card end -->
+        </div> <!-- end responsive div -->
+        <!-- ======2========= -->
+        <div class="col" >
+            <br>
+            <p-card header="Teachers" [style]="{width: '300px',height:'200px','color':'#3498DB'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    <br>&nbsp; <button pButton pRipple type="button" icon="fas fa-chalkboard-teacher" class="p-button-raised p-button-info"></button>
+                </ng-template>
+                   <div class="text">
+                        12
+                   </div>
+                <ng-template pTemplate="footer">
+                    
+                </ng-template>
+            </p-card>
+            
+        </div>
+		 <!-- ======3========= -->
+        <div class="col" >
+            <br>
+            <p-card header="Classes"  [style]="{width: '300px',height:'200px','color':'#A569BD'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    <br>&nbsp; <button pButton pRipple type="button" icon="fa-solid fa-school" class="p-button-raised p-button-help"></button>
+                </ng-template>
+                <div class="text">
+                    21
+               </div>
+                <ng-template pTemplate="footer">
+                </ng-template>
+            </p-card>
+            
+        </div>
+        <div class="col" >
+            <br>
+            <p-card  header="Seminars"  [style]="{width: '300px',height:'200px',color:'#E74C3C'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    <br>&nbsp; <button pButton pRipple type="button" icon="pi pi-box" class="p-button-raised p-button-danger"></button> 
+                </ng-template>
+                <div class="text">
+                    6
+               </div>
+                <ng-template pTemplate="footer">
+                </ng-template>
+            </p-card>
+            
+        </div>
+           
+        <!-- ####### 2nd row ######## -->
+
+        <div class="col" >
+            <br>
+            <p-card header="Students Population" [style]="{width: '630px',height:'500px','color':'#2C3E50'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                   
+                </ng-template>
+                
+                <div class="text">
+                    <p-chart type="pie" width="400" height="400"  [data]="data"></p-chart>
+                    <button type="button" pButton (click)="update()"  icon="pi pi-refresh"></button>
+               </div>
+                <ng-template pTemplate="footer">
+                </ng-template>
+            </p-card>
+            
+        </div>
+        <div class="col" >
+            <br>
+            <p-card  header="Count of Users"  [style]="{width: '630px',height:'500px',color:'#2C3E50'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    
+                </ng-template>
+                
+                <div class="card">
+                    
+                    <p-chart type="line" [data]="basicData" [options]="basicOptions"></p-chart>
+                </div>
+                <div class="text">
+               
+               </div>
+                <ng-template pTemplate="footer">
+                </ng-template>
+            </p-card>
+            
+        </div>
+        <br>
+        <div class="col" >
+            <br>
+            <p-card  header="Recent Students"  [style]="{width: '630px',height:'650px',color:'#2C3E50'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    
+                </ng-template>
+                
+                <div class="card" >
+                    
+                   
+                </div>
+                <div class="text">
+                    <p-table [value]="Student" styleClass="p-datatable-striped"  #dt1  
+                        [paginator]="true" [rows]="4" [totalRecords]=0>
+                        <ng-template pTemplate="body" let-student >
+                            <tr>
+                                <td>
+                                    <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+                                </td>
+                                <td style="font-size: large;font-weight: bold;">
+                                    {{student.name}}
+                                </td>
+                               
+                            </tr>
+                        </ng-template>
+                        </p-table>
+               </div>
+                <ng-template pTemplate="footer">
+                    <button pButton pRipple type="button" (click)="goStd()" label="See All" class="p-button-raised"></button>
+                </ng-template>
+            </p-card>
+            
+        </div>
+        <div class="col" >
+            <br>
+            <p-card  header="Ongoing Classes"  [style]="{width: '630px',height:'400px',color:'#2C3E50'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    
+                </ng-template>
+                
+                <div class="card">
+                    
+                   
+                </div>
+                <div class="text">
+                   
+               </div>
+                <ng-template pTemplate="footer">
+                </ng-template>
+            </p-card>
+            
+        </div>
+    </div></div>
+<br><br><br>
+        <footer>
+          <app-footer></app-footer>
+        </footer>

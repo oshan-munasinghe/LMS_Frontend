@@ -1,0 +1,94 @@
+
+ <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        
+      </div>
+    </div>  <!--// row header-->
+
+    <div class="row">
+   <!-- ========1========== -->
+  <!-- start responsive div -->
+   <div class="col-12 col-sm-6 col-md-4">
+            <br>
+     <!-- our vision card start -->
+            <p-card header="Our Vision" subheader="vision" [style]="{width: '360px',height:'310px'}" styleClass="p-card-shadow">
+         <!-- header start -->
+                <ng-template pTemplate="header" >
+                    
+                </ng-template> <!-- header end -->
+
+                <p>Providing comprehensive and tailored tutoring programs of students of all ages to perform well in their academic and life success.
+                </p>
+                <div style="height: 50px;"></div>
+               
+         <!-- footer start -->
+                <ng-template pTemplate="footer">
+                <!-- button func start-->
+                    <p-button (click)="showModalDialog()" icon="pi pi-external-link"   label="See More..."></p-button>
+                    <p-dialog header="Our Vision" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+                        [draggable]="false" [resizable]="false">
+                        <p class="m-0">Providing comprehensive and tailored tutoring programs of students of all ages to perform well in their academic and life success.
+                            <br>* We believe our educational programme will aide all of our students to achieve their personal educational goals.
+                            <br>* Provide a positive experience and opportunities for every student to improve their skills and build self-esteem.
+                            <br>* Help students to build the foundation of their future success by helping them to become independent learners.
+                            <br>* Provide positive learning environment.
+
+                        </p>
+                            <ng-template pTemplate="footer">
+                            <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+                            </ng-template>
+                    </p-dialog><!-- button func end -->
+                </ng-template><!-- footer end -->
+            </p-card> <!-- our vision card end -->
+        </div> <!-- end responsive div -->
+        <!-- ======2========= -->
+        <div class="col-12 col-sm-6 col-md-4" >
+            <br>
+            <p-card header="Our Mission" subheader="Mission" [style]="{width: '360px',height:'310px'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    
+                </ng-template>
+                <p>To provide high quality, Customized tutoring services through the utilization of diligent tutors. To provide a positive experience and opportunity to every student to enhance their skills and build self esteem. Deliver knowledge to the students with up to date content...</p>
+                <ng-template pTemplate="footer">
+                     <!-- button func start-->
+                     <p-button (click)="showModalDialog2()" icon="pi pi-external-link" label="See More..."></p-button>
+                     <p-dialog header="Our Mision" [(visible)]="displayModal2" [modal]="true" [style]="{width: '50vw'}"
+                         [draggable]="false" [resizable]="false">
+                         <p class="m-0">To provide high quality, Customized tutoring services through the utilization of diligent tutors. To provide a positive experience and opportunity to every student to enhance their skills and build self esteem. Deliver knowledge to the students with up to date content to achieve their personal educational goals.</p>
+                             <ng-template pTemplate="footer">
+                             <p-button icon="pi pi-check" (click)="displayModal2=false" label="Ok" styleClass="p-button-text"></p-button>
+                             </ng-template>
+                     </p-dialog><!-- button func end -->
+                </ng-template>
+            </p-card>
+            
+        </div>
+            <!-- =========3======= -->
+            <div class="col-12 col-sm-6 col-md-4" >
+                <br>
+                <p-card header="Our Values" subheader="Values" [style]="{width: '360px'}" styleClass="p-card-shadow">
+                    <ng-template pTemplate="header">
+                        
+                    </ng-template>
+                    <p>We seek to instill in our clients the same values that we strive to foster in our Institutean uncompromising commitment to excellence, a deep and abiding interest in the life of the mind,<br>.</p>
+                    <ng-template pTemplate="footer">
+                         <!-- button func start-->
+                    <p-button (click)="showModalDialog3()" icon="pi pi-external-link" label="See More..."></p-button>
+                    <p-dialog header="Our Values" [(visible)]="displayModal3" [modal]="true" [style]="{width: '50vw'}"
+                        [draggable]="false" [resizable]="false">
+                        
+                        <p class="m-03">Our Core Values <br>
+                        Learning <br>
+                        Excellence <br>
+                        Growth <br>
+                        Service <br>
+                        Community <br></p>
+                            <ng-template pTemplate="footer">
+                            <p-button icon="pi pi-check" (click)="displayModal3=false" label="Ok" styleClass="p-button-text"></p-button>
+                            </ng-template>
+                    </p-dialog><!-- button func end -->
+                    </ng-template>
+                </p-card>
+                
+            </div>

@@ -1,0 +1,64 @@
+.block-main{
+    background-color: bisque;
+}
+.block-left{
+   
+    float: left;
+    width: 35%;
+    height: 500px;
+   text-align: center;
+    
+
+}
+.img{
+    background-image: url("../../../../assets/img/acess-denied-01.png");
+    height: 150px;
+    width: 170px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40%;
+    
+   
+  }
+
+.block-right{
+   
+    float: right;
+    width: 65%;
+    height: 500px;
+}
+.t1{
+    color: #117A65;
+    font-size: larger;
+    font-weight: bold;
+    text-align: left;
+}
+.t2{
+    color: #899b95;
+    font-size: medium;
+    font-weight: bold;
+    text-align: left;
+}
+.t4{
+    color: #6C3483 ;
+   
+    font-size: medium;
+    font-weight: bold;
+    text-align: left;
+}
+@media (max-width: 576px) {
+    .img{
+        background-image: none;
+
+    }
+    .block-left{
+        width: 0%;
+    }
+    .block-right{
+        width: 90%;
+    }
+}

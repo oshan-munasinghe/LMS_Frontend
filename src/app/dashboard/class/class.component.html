@@ -1,0 +1,55 @@
+
+<app-navbar></app-navbar>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" acceptButtonStyleClass="p-button p-button-info" rejectButtonStyleClass="p-button-outlined p-button-info"></p-confirmDialog>
+
+<mat-card class="mat-dr">   
+    <mat-card-title>My Classes</mat-card-title><br>
+    <mat-card-subtitle>Name - {{sName}}</mat-card-subtitle>
+    <mat-card-subtitle>Grade- {{sGrade}}</mat-card-subtitle>
+    </mat-card>
+<br>
+&nbsp;<button pButton  (click)="geteClass()" pRipple type="button" icon="pi pi-refresh" label="Click to Load Data" class="p-button-outlined p-button-primary"></button>
+<br><br>
+<p-dataView [value]="Classes">
+    <ng-template let-car pTemplate="listItem" let-classes >
+        <p-panel   >
+            
+            <div style="float: left; padding-right: 20px;">
+        <p-avatar icon="pi pi-book" styleClass="mr-2" size="xlarge" shape="circle" ></p-avatar>
+    </div>
+    
+    <button pButton (click)="deleteClass(classes._id)" pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger p-button-outlined" style="float: right; margin-left: 10px"></button>
+    <a routerLink="/payment/{{classes._id}}">
+        <button  pButton icon="pi pi-money-bill" 
+        pRipple type="button" label="Payment" class="p-button-outlined" style="float: right;"></button>
+    </a>
+    
+    <!-- <button pButton pRipple type="button" label="Payment" icon="pi pi-money-bill" class="p-button-outlined" style="margin-right: 10px; float:right ;"></button>        -->
+           
+            
+
+            <p class="tiv" style="color: green; font-weight: bold;font-size: larger;">&nbsp;{{classes.class_name}}
+                <p-tag styleClass="mr-2" severity="success" value="Class Code {{classes.class_code}}" [rounded]="true"></p-tag>
+                <span *ngIf="classes.status=='online'" class="badge bg-info"></span>
+            </p>
+             <p class="tiv" style="color: rgb(60, 65, 60);font-weight: bold; ">&nbsp;Conduct by - {{classes.t_name}}
+               
+            </p>
+            
+                <p-tag *ngIf="classes.payment==null" styleClass="mr-2" severity="danger" value="! Payment Due 😡" [rounded]="true"></p-tag>
+                <!-- <span *ngIf="classes.payment=='true'" class="badge bg-info"></span> -->
+            
+          
+       
+        </p-panel>
+    </ng-template>
+ </p-dataView>
+ <div class="foot-s">
+    
+ </div>
+    <footer>
+        <app-footer></app-footer>    
+    </footer>

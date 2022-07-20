@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/dashboard">Institute</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/dashboard">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/timetable">Time Table</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"routerLink="/result">Exam</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="/class">Class</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/payment">Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/report">Report</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/qa">Q&A</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About</a>
+          </li>
+         
+          
+        </ul> 
+        <ul class="nav navbar-right">
+          <li><button (click)="logout()" type="button"  class="btn btn-light">Logout</button></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 

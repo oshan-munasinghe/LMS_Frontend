@@ -1,0 +1,65 @@
+
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+<form  [formGroup]="loginForm" (ngSubmit)="login()">
+<div class="limiter">
+  <div class="container-login100" >
+    <div class="wrap-login100">
+      <div class="login100-pic js-tilt" data-tilt>
+        <img src="../../../assets/img/sys-admin.png" alt="myClass">
+      </div>
+      
+      <div class="login100-form validate-form">
+       
+        <span class="login100-form-title" style="font-family: cursive; font-size: xx-large;">
+          Admin Login
+        </span>
+
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+          <input class="input100" type="email" name="email" placeholder="Email" formControlName="email"id="email">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Password is required">
+          <input class="input100" type="password" name="pass" placeholder="Password" formControlName="password" id="password">
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </span>
+        </div>
+        
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" type="submit">
+            Login
+          </button>
+        </div>
+
+        <div class="text-center p-t-12">
+          <span class="txt1">
+            Contact
+          </span>
+          <a class="txt2" href="#">
+            Developer Team
+          </a>
+          <br>
+            <div class="button-row" >
+                <button pButton pRipple (click)="student_l()" type="button" target="_blank" label="Student" class="p-button-outlined p-button-success"></button>
+                <button pButton pRipple (click)="teacher_l()" type="button" target="_blank" label="Teacher" class="p-button-outlined p-button-info"></button>
+            </div>
+        </div>
+
+        <div class="text-center p-t-136">
+          <a class="txt2"  routerLink="">
+            
+            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>

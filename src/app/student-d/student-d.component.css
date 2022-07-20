@@ -1,0 +1,33 @@
+div.container{
+    margin: 0px 10px;
+}
+/* mat-grid-tile {
+    background: rgb(226, 226, 226);
+  } */
+.controles-container{
+    width:100%;
+    padding: 5%;
+}
+.controles-container >*{
+    width:100%
+}
+mat-radio-group mat-radio-button{
+    margin-left: 5px;
+}
+
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+	background-color: #2ECC71!important;   /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+	border-color:#2ECC71!important; /*outer ring color change*/
+}
+.mat-card{
+    background-image: 
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.52), #d9e2dd );
+    
+}
+.button-row button{
+    margin:5px;
+}

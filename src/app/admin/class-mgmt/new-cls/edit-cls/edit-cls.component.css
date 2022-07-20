@@ -1,0 +1,72 @@
+:host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+:host ::ng-deep .p-dropdown {
+    width: 90%;
+}
+
+
+.layout-news-active :host ::ng-deep .p-datatable tr > th {
+    top: 0;
+}
+
+@media screen and (max-width: 64em) {
+    :host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+        top: 0;
+    }
+
+    .layout-news-active :host ::ng-deep .p-datatable tr > th {
+        top: 0;
+    }
+}
+.mat-dr{
+    padding: 2em;
+    margin: auto;
+   text-align: left;
+   color: rgb(97, 114, 114);
+}
+.mat-card{
+      
+    
+    box-shadow: 10px;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+
+.cst-01{
+    float: left; width: 33%;
+    text-align: center;
+    margin: auto;
+    padding: 2em;
+    padding-bottom: 0em;
+    
+    
+}
+.p-inputgroup{
+    margin-bottom: 2em;
+}
+@media (max-width: 570px) {
+    .cst-01{
+        float: left; width: 100%;
+    }
+    .p-inputgroup{
+        margin-bottom: 2em;
+    }
+}
+:host ::ng-deep .p-dropdown {
+    width: 14rem;
+}
+
+@media (max-width: 800px) {
+    .cst-01{
+        float: left; width: 100%;
+    }
+    .p-inputgroup{
+        margin-bottom: 2em;
+    }
+}
+.drop-down{
+    text-align: left;
+}

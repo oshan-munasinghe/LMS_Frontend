@@ -1,0 +1,36 @@
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" acceptButtonStyleClass="p-button p-button-info" rejectButtonStyleClass="p-button-outlined p-button-info"></p-confirmDialog>
+<br>
+<button pButton pRipple type="button" (click)="getStream()" label="Show" icon="pi pi-refresh" class="p-button-rounded p-button-help p-button-outlined"></button>
+<br><br>
+<p-dataView [value]="Stream">
+    <ng-template let-car pTemplate="listItem" let-stream >
+        <p-panel  pRipple class="purple" >
+            
+            <div style="float: left; padding-right: 20px;">
+        <p-avatar icon="pi pi-server" styleClass="mr-2" size="xlarge" shape="circle" ></p-avatar>
+    </div>
+    &nbsp;&nbsp;                
+    <a routerLink="/t/ed-stream/{{stream._id}}">
+        <button  pButton icon="pi pi-external-link" 
+        pRipple type="button"  class="p-button-outlined p-button-info" style="float: right;margin-left: 10px;"></button>
+    </a>&nbsp;&nbsp;
+    <button pButton  pRipple type="button" (click)="delete(stream._id)" icon="pi pi-trash" style="float: right;" class="p-button-rounded p-button-danger p-button-outlined"></button>
+      &nbsp;     
+           
+            
+
+            <p class="tiv" style="color: rgb(0, 19, 128); font-weight: bold;font-size: larger;">&nbsp;{{stream.clz_name}}
+                <p-tag styleClass="mr-2" severity="warning" value="Class Code {{stream.clz_code}}" [rounded]="true"></p-tag>
+                <span  class="badge bg-primary">Stream</span>
+            </p>
+             <p class="tiv" style="color: rgb(60, 65, 60);font-weight: bold; ">&nbsp;{{stream.t_name}}
+               
+            </p>
+           
+          
+       
+        </p-panel>
+    </ng-template>

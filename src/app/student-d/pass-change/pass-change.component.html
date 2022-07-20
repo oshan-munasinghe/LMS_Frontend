@@ -1,0 +1,35 @@
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+<form  [formGroup]="passchangeGr" (ngSubmit)="passChange()">
+<div class="mat-crd">
+    <mat-card>
+    <h3 style="text-align: center;">Password Change</h3>
+    </mat-card>
+  </div>
+
+<div class="mat-crd">
+   
+        <div class="controles-container">
+            
+            <mat-form-field >
+                <input matInput placeholder="Current Password" type="password" formControlName="cpass">
+                
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="New Password" type="password" formControlName="password" >
+                
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Confirm Password" type="password" >
+                
+              </mat-form-field>
+              <div class="button-row">
+              <button type="submit" pButton pRipple mat-raised-button color="primary">Change</button>
+              <button type="button" (click)="close()" mat-raised-button >Cancel</button>
+             </div>
+        </div>
+  
+
+</div>
+</form>
